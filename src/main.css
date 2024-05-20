@@ -35,7 +35,6 @@ body {
 
 main {
 	padding: 0 40px;
-	margin-top: 0px;
 }
 
 hr {
@@ -98,6 +97,7 @@ nav {
 /* Images - Top Games - Image Grid */
 
 .top_games {
+	margin-top: 20px;
 }
 
 .top_games--grid_container {
@@ -109,7 +109,6 @@ nav {
 
 .top_games--grid_item {
 	width: 100%;
-
 	border: 5px solid black;
 	border-radius: 30px 5px;
 }
