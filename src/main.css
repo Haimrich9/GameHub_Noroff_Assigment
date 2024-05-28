@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	scroll-behavior: smooth;
 }
 /* Font Size */
 
@@ -92,6 +93,14 @@ nav {
 
 .nav--grid_item:hover {
 	background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
+}
+#header,
+#newGames,
+#cyberpunk,
+#info,
+#contact {
+	scroll-margin-top: 70px;
+	scroll-behavior: smooth;
 }
 
 /* Images - Top Games - Image Grid */
