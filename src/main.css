@@ -75,12 +75,12 @@ nav {
 	background-color: #cb3864;
 }
 
-.nav--grid_container {
+.nav .grid_container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.nav--grid_item {
+.nav .grid_item {
 	width: 100%;
 	text-align: center;
 	height: 50px;
@@ -91,13 +91,13 @@ nav {
 	color: inherit;
 }
 
-.nav--grid_item:hover {
+.nav .grid_item:hover {
 	background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
 }
 #header,
 #newGames,
 #cyberpunk,
-#info,
+#about,
 #contact {
 	scroll-margin-top: 70px;
 	scroll-behavior: smooth;
@@ -109,24 +109,24 @@ nav {
 	margin-top: 20px;
 }
 
-.top_games--grid_container {
+.top_games .grid_container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	margin: auto 0;
 	column-gap: 50px;
 }
 
-.top_games--grid_item {
+.top_games .grid_item {
 	width: 100%;
 	border: 5px solid black;
 	border-radius: 30px 5px;
 }
 
 @media only screen and (max-width: 700px) {
-	.top_games--grid_container {
+	.top_games .grid_container {
 		grid-template-columns: 1fr;
 	}
-	.top_games--grid_item {
+	.top_games .grid_item {
 		max-height: 200px;
 		overflow: hidden;
 	}
@@ -134,7 +134,7 @@ nav {
 
 /* Images - Game List - Image Grid */
 
-.new_games--grid_container {
+.new_games > .grid_container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	row-gap: 50px;
@@ -142,7 +142,7 @@ nav {
 	column-gap: 50px;
 }
 
-.new_games--grid_item {
+.new_games .grid_item {
 	width: 100%;
 	border-radius: 30px 5px;
 }
