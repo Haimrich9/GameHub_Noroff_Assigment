@@ -157,26 +157,3 @@ nav {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
-
-/*
-.grid_container_img {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	column-gap: 30px;
-}
-.grid_item {
-	width: 100%;
-	height: auto;
-}
-
-.grid_item_image_wrap {
-	height: 255px;
-}
-.grid_item img {
-	height: 100%;
-
-	object-fit: cover;
-
-	border-radius: 30px 5px 30px 5px;
-	display: block;
-} */
