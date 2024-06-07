@@ -9,6 +9,7 @@ const createHeader = () => {
 				<div class="cart"></div>
 				<div class="menu"></div>
 			</div>
+					<nav class="nav"></nav>
     `;
 };
 

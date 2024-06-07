@@ -3,6 +3,7 @@
 	padding: 0;
 	text-align: center;
 	scroll-behavior: smooth;
+	text-decoration: none;
 }
 /* Font Size */
 
@@ -21,11 +22,28 @@ h3 {
 h4 {
 	font-size: 50px;
 }
+h5 {
+	font-size: 40px;
+}
+h6 {
+	font-size: 25px;
+}
 p {
 	font-size: 20px;
+	margin: 20px;
 }
 
 /* General Styling */
+
+.grid_item {
+	width: 100%;
+	overflow: hidden;
+}
+
+.grid_container {
+	display: grid;
+	margin: auto 0;
+}
 
 body {
 	background-color: #42092b;
@@ -40,7 +58,7 @@ main {
 
 hr {
 	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 50px;
 	border: none;
 	height: 5px;
 	/* Set the hr color */
@@ -51,14 +69,15 @@ hr {
 }
 
 section {
-	margin: 140px 0;
+	margin: 100px 0;
 }
 
 /* Header */
 
 header {
 	width: 100%;
-	top: 0;
+	position: sticky;
+	top: -75px;
 }
 
 .logo {
@@ -67,8 +86,6 @@ header {
 
 nav {
 	height: 50px;
-	position: sticky;
-	top: 0;
 }
 
 .navbar {
@@ -81,13 +98,9 @@ nav {
 }
 
 .nav .grid_item {
-	width: 100%;
-	text-align: center;
 	height: 50px;
 	line-height: 50px;
 	background: linear-gradient(rgba(40, 10, 28, 100%), rgba(40, 10, 28, 0.7));
-
-	text-decoration: none;
 	color: inherit;
 }
 
@@ -110,14 +123,11 @@ nav {
 }
 
 .top_games .grid_container {
-	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	margin: auto 0;
 	column-gap: 50px;
 }
 
 .top_games .grid_item {
-	width: 100%;
 	border: 5px solid black;
 	border-radius: 30px 5px;
 }
@@ -128,22 +138,18 @@ nav {
 	}
 	.top_games .grid_item {
 		max-height: 200px;
-		overflow: hidden;
 	}
 }
 
 /* Images - Game List - Image Grid */
 
-.new_games > .grid_container {
-	display: grid;
+.new_games .grid_container {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	row-gap: 50px;
-	margin: auto 0;
 	column-gap: 50px;
 }
 
 .new_games .grid_item {
-	width: 100%;
 	border-radius: 30px 5px;
 }
 
@@ -156,4 +162,26 @@ nav {
 	.new_games--grid_container {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
+}
+
+/* Cyberpunk Card */
+
+.cyberpunk .desc {
+	background-color: #ffacc4;
+	border: 10px solid #cb3864;
+	color: black;
+	padding: 20px;
+	width: auto;
+	border-radius: 30px 5px 0 5px;
+}
+
+.cyberpunk--main_img {
+	width: 650px;
+	max-height: 700px;
+}
+
+.cyberpunk .grid_container {
+	grid-template-columns: 1fr 1fr;
+	column-gap: 60px;
+	max-height: 200px;
 }
