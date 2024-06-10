@@ -35,6 +35,33 @@ const createFooter = () => {
     `;
 };
 
+/* Talitha - Code Help 
+
+window.addEventListener("scroll", () => {
+	const gridNav = document.querySelector("div.grid_container");
+	console.log(gridNav);
+	if (window.scrollY > 50) {
+		gridNav.classList.add("scrolled");
+	} else {
+		gridNav.classList.remove("scrolled");
+	}
+}); 
+*/
+
+window.addEventListener("scroll", () => {
+	let headerHight = document.querySelector(".navbar").offsetHeight;
+	const headerSticky = document.querySelector("header");
+
+	if (window.scrollY > headerHight) {
+		headerSticky.classList.add("headerSticky");
+		headerSticky.style.transform = `translateY(-${headerHight}px)`;
+	} else {
+		headerSticky.classList.remove("headerSticky");
+		headerSticky.style.transform = "";
+	}
+
+	console.log(headerHight);
+});
 createHeader();
 createNav();
 createFooter();

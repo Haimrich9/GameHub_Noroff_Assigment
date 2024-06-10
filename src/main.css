@@ -76,8 +76,15 @@ section {
 
 header {
 	width: 100%;
+	top: 0;
+}
+.headerSticky {
 	position: sticky;
-	top: -75px;
+	opacity: 0.9;
+}
+
+header .navbar {
+	background-color: #cb3864;
 }
 
 .logo {
@@ -86,6 +93,10 @@ header {
 
 nav {
 	height: 50px;
+}
+
+.nav > div.scrolled {
+	opacity: 50%;
 }
 
 .navbar {
@@ -100,7 +111,7 @@ nav {
 .nav .grid_item {
 	height: 50px;
 	line-height: 50px;
-	background: linear-gradient(rgba(40, 10, 28, 100%), rgba(40, 10, 28, 0.7));
+	background: rgba(40, 10, 28, 100%);
 	color: inherit;
 }
 
