@@ -4,6 +4,7 @@
 	text-align: center;
 	scroll-behavior: smooth;
 	text-decoration: none;
+	border: none;
 }
 /* Font Size */
 
@@ -194,3 +195,29 @@ nav {
 }
 
 /* Contact */
+.contact,
+.about {
+	background-color: #cb3864;
+	padding: 20px;
+	width: auto;
+	border-radius: 30px;
+	border: black solid 3px;
+}
+
+.contact_about--grid_container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+.contact .grid_container {
+	grid-template-rows: 2fr 3fr 2fr 3fr 2fr 3fr 2fr 10fr;
+}
+
+.submit {
+	width: 120px;
+	height: 40px;
+	margin: 10px auto 0 auto;
+	border-radius: 10px;
+	border: none;
+	font-size: 20px;
+}
