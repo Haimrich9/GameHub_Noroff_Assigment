@@ -70,6 +70,7 @@ section {
 .grid_container {
 	display: grid;
 	margin: auto 0;
+	column-gap: 3%;
 }
 
 /* Header */
@@ -102,6 +103,7 @@ nav {
 .nav .grid_container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	column-gap: 0;
 }
 
 .nav .grid_item {
@@ -131,7 +133,6 @@ nav {
 
 .top_games .grid_container {
 	grid-template-columns: 1fr 1fr 1fr;
-	column-gap: 50px;
 }
 
 .top_games .grid_item {
@@ -153,7 +154,6 @@ nav {
 .new_games .grid_container {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	row-gap: 50px;
-	column-gap: 50px;
 }
 
 .new_games .grid_item {
@@ -161,12 +161,12 @@ nav {
 }
 
 @media only screen and (max-width: 950px) {
-	.new_games--grid_container {
+	.new_games .grid_container {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
 @media only screen and (max-width: 800px) {
-	.new_games--grid_container {
+	.new_games .grid_container {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
@@ -180,15 +180,17 @@ nav {
 	padding: 20px;
 	width: auto;
 	border-radius: 30px 5px 0 5px;
+	height: 590px;
 }
 
 .cyberpunk--main_img {
-	width: 650px;
-	max-height: 700px;
+	height: 650px;
+	object-fit: cover;
+	width: 100%;
 }
 
 .cyberpunk .grid_container {
-	grid-template-columns: 1fr 1fr;
-	column-gap: 60px;
-	max-height: 200px;
+	grid-template-columns: 2fr 3fr;
 }
+
+/* Contact */
