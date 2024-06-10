@@ -9,7 +9,7 @@ const createHeader = () => {
 				<div class="cart"></div>
 				<div class="menu"></div>
 			</div>
-					<nav class="nav"></nav>
+			<nav class="nav"></nav>
     `;
 };
 
@@ -49,7 +49,7 @@ window.addEventListener("scroll", () => {
 */
 
 window.addEventListener("scroll", () => {
-	let headerHight = document.querySelector(".navbar").offsetHeight;
+	let headerHight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
 	const headerSticky = document.querySelector("header");
 
 	if (window.scrollY > headerHight) {
@@ -59,9 +59,18 @@ window.addEventListener("scroll", () => {
 		headerSticky.classList.remove("headerSticky");
 		headerSticky.style.transform = "";
 	}
-
-	console.log(headerHight);
 });
-createHeader();
-createNav();
-createFooter();
+
+document.addEventListener("DOMContentLoaded", () => {
+	createHeader();
+	createNav();
+	createFooter();
+});
+
+/* scroll to top when reload | Code from stackoverflow.com
+|-- https://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top/11486546#11486546 -- 
+v                                            																		*/
+
+window.onload = function () {
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
+};
