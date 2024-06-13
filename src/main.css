@@ -59,6 +59,10 @@ hr {
 	width: 100%;
 }
 
+img {
+	object-fit: cover;
+}
+
 section {
 	margin: 100px 0;
 }
@@ -79,6 +83,7 @@ section {
 header {
 	width: 100%;
 	top: 0;
+	z-index: 100;
 }
 .headerSticky {
 	position: sticky;
@@ -139,6 +144,7 @@ nav {
 .top_games .grid_item {
 	border: 5px solid black;
 	border-radius: 30px 5px;
+	object-fit: cover;
 }
 
 @media only screen and (max-width: 700px) {
@@ -221,3 +227,105 @@ nav {
 	border: none;
 	font-size: 20px;
 }
+
+/* -- Product page -- */
+
+.product_page .grid_container {
+	background-color: #ff7ea5;
+	height: 600px;
+	width: 100%;
+	margin: 50px 0;
+	grid-template-columns: 3fr 2fr;
+	column-gap: 0;
+}
+
+.product_page .grid_item:nth-child(1) {
+	margin: 20px;
+	background-color: #cb3864;
+	padding: 20px;
+}
+
+.product_page .grid_item:nth-child(2) {
+	border: 20px solid #cb3864;
+	margin: 20px 20px 20px 0;
+}
+.img_grid {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product_page .img_grid img {
+	height: 110px;
+	width: 110px;
+}
+
+.product_page .grid_item {
+	width: auto;
+}
+
+.product_page .main_img {
+	width: 100%;
+	height: 375px;
+	margin-bottom: 10px;
+}
+.star {
+	height: 45px;
+	width: 50px;
+	display: flex; /* Use flexbox for horizontal layout */
+	justify-content: center; /* Align items horizontally in center */
+	align-items: center; /* Vertically center items */
+	font-size: 20px;
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="45" viewBox="0 0 50 45" fill="none"><path d="M11.9166 45C11.3585 44.9985 10.8074 44.8829 10.3018 44.6613C9.79609 44.4396 9.3479 44.1172 8.98838 43.7164C8.62886 43.3157 8.36664 42.8462 8.21993 42.3407C8.07323 41.8352 8.04558 41.3057 8.1389 40.7892L10.2965 28.9805L1.15608 20.6222C0.644194 20.1528 0.282296 19.5583 0.111251 18.906C-0.0597938 18.2537 -0.0331719 17.5695 0.18811 16.9306C0.409393 16.2917 0.816521 15.7237 1.36352 15.2906C1.91052 14.8575 2.57561 14.5766 3.28368 14.4796L15.9118 12.7568L21.5595 2.00902C21.876 1.40605 22.366 0.898292 22.974 0.543235C23.582 0.188179 24.2837 0 24.9997 0C25.7157 0 26.4174 0.188179 27.0254 0.543235C27.6334 0.898292 28.1233 1.40605 28.4398 2.00902L34.0876 12.7521L46.7157 14.4749C47.4238 14.5714 48.089 14.8519 48.6361 15.2848C49.1833 15.7176 49.5905 16.2855 49.8119 16.9243C50.0332 17.5631 50.0598 18.2473 49.8886 18.8995C49.7175 19.5517 49.3554 20.146 48.8433 20.6151L39.7029 28.9805L41.8605 40.7868C41.9815 41.449 41.9027 42.1299 41.633 42.7522C41.3633 43.3746 40.9135 43.9137 40.3345 44.3086C39.7555 44.7035 39.0703 44.9384 38.3564 44.9868C37.6426 45.0351 36.9286 44.895 36.2952 44.5822L24.9997 39.0076L13.7042 44.5822C13.1533 44.8558 12.5398 44.9992 11.9166 45ZM6.33882 18.8008L14.2242 26.0207C14.67 26.4279 15.0034 26.931 15.1955 27.4864C15.3876 28.0418 15.4326 28.6327 15.3267 29.2082L13.4666 39.3996L23.2171 34.5856C23.7675 34.3161 24.379 34.1754 24.9997 34.1754C25.6204 34.1754 26.2319 34.3161 26.7823 34.5856L36.5327 39.3973L34.6701 29.2082C34.5651 28.6324 34.611 28.0412 34.804 27.4858C34.997 26.9304 35.3312 26.4276 35.7777 26.0207L43.6605 18.8031L32.7625 17.3173C32.1476 17.2333 31.5636 17.0104 31.0607 16.6678C30.5577 16.3252 30.1508 15.8731 29.8749 15.3504L24.9997 6.06964L20.127 15.341C19.8515 15.8645 19.4448 16.3174 18.9419 16.6608C18.4389 17.0042 17.8547 17.2279 17.2393 17.3126L6.33882 18.8008Z" fill="%23280A1C"/></svg>');
+}
+
+ul {
+	display: flex;
+	list-style: none;
+	align-items: center; /* Vertically center items */
+}
+
+.card {
+	position: relative;
+}
+
+button.star_btn {
+	border: 5px solid palevioletred;
+	background-color: palevioletred;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 13%;
+	right: 4%;
+}
+
+.cyberpunk button.star_btn {
+	left: 4%;
+}
+
+button.add {
+	background-color: pink;
+}
+
+.nav_bar.grid_container {
+	border: 5px solid red;
+}
+
+/*
+
+.product_page .main_img {
+	height: 600px;
+}
+
+.product_page.grid_container {
+	border: 5px solid red;
+}
+.product_page .img_grid {
+	row-gap: 10px;
+}
+
+.product_page img.grid_item {
+	height: 80px;
+	width: 80px;
+	object-fit: cover;
+	border: 5px solid black;
+} */
