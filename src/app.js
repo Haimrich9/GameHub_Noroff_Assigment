@@ -1,29 +1,26 @@
-const createHeader = () => {
-	let header = document.querySelector("header");
+/* Used to reduce copy pasting elements that will be on all html pages.
+	- This is not currently active
+	- Will only be used during testing, final product will not use this
+	  unless I find a bug fix for the scroll error
+*/
+const createNavbar = () => {
+	let navbar = document.querySelector(".navbar");
 
-	header.innerHTML = `
-        	<ul class="navbar">
-			<li><img src="img/GameHub_Logo.png" class="logo" alt="logo"/></li>
-				<li class="search_bar"></li>
-				<li class="star">0</li>
-				<li class="cart"></li>
-				<li class="menu"></li>
-			</ul>
-			<nav class="nav"></nav>
+	navbar.innerHTML = `
+			<li><img src="img/GameHub_Logo.png" class="logo grid_item" alt="logo" /></li>
+			<li class="search_bar grid_item"></li>
+			<li class="menu grid_item"></li>
+			<li class="star grid_item"></li>
+			<li class="cart grid_item"><button class="reset">reset</button></li>
     `;
 };
+createNavbar();
 
 const createNav = () => {
 	let nav = document.querySelector("nav");
 
 	nav.innerHTML = `
-            <div class="grid_container">
-				<a href="index.html#header" class="grid_item">Home</a>
-				<a href="#newGames" class="grid_item">New Games</a>
-				<a href="#cyberpunk" class="grid_item">Cyberpunk</a>
-				<a href="#about" class="grid_item">About</a>
-				<a href="#contact" class="grid_item">Contact</a>
-			</div>
+
     `;
 };
 
@@ -35,54 +32,47 @@ const createFooter = () => {
     `;
 };
 
-/* Talitha - Code Help 
+/* Local Storage Testing */
+const reset_btn = document.querySelector(".reset");
+const star = document.querySelector(".star");
 
-window.addEventListener("scroll", () => {
-	const gridNav = document.querySelector("div.grid_container");
-	console.log(gridNav);
-	if (window.scrollY > 50) {
-		gridNav.classList.add("scrolled");
-	} else {
-		gridNav.classList.remove("scrolled");
-	}
-}); 
+function resetStar() {
+	localStorage.setItem("starNum", "0");
+	star.innerHTML = "0";
+}
+
+reset_btn.addEventListener("click", resetStar);
+
+/* -- Star button functionality --
+- Selects all buttons with class ".star_btn"
+- Gets value of "starNum" from Local Storage
+- Updates local value based on button clicks
 */
-/*window.addEventListener("click", () => {
-	// Select the element with the class "star"
-	const starElement = document.querySelector(".star");
+const star_btn = document.querySelectorAll(".star_btn");
 
-	// Get the current text content and convert it to an integer
-	const currentNumber = parseInt(starElement.textContent, 10);
-
-	// Increment the number
-	const newNumber = currentNumber + 1;
-
-	// Update the element's text content with the new number
-	starElement.textContent = newNumber;
-
-	// Log the results
-	console.log("Button pressed");
-	console.log(newNumber);
-}); */
-
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
+star_btn.forEach((button) => {
 	button.addEventListener("click", (event) => {
-		const star = document.querySelector(".star");
-		const starNum = parseInt(star.textContent, 10);
-		const buttonClass = event.target;
-		if (buttonClass.classList.contains("add")) {
+		const starNum = parseInt(localStorage.getItem("starNum"));
+
+		const buttonClassTarget = event.target;
+		if (buttonClassTarget.classList.contains("add")) {
 			const starUpdate = starNum + 1;
 			star.innerHTML = starUpdate;
-			buttonClass.classList.remove("add");
+			buttonClassTarget.classList.remove("add");
+			localStorage.setItem("starNum", starUpdate);
 		} else {
 			const starUpdate = starNum - 1;
 			star.innerHTML = starUpdate;
-			buttonClass.classList.add("add");
+			buttonClassTarget.classList.add("add");
+
+			localStorage.setItem("starNum", starUpdate);
 		}
 	});
 });
 
+/* -- Sticky Header functionality -- 
+	- Activates on Scroll 
+*/
 window.addEventListener("scroll", () => {
 	let headerHight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
 	const headerSticky = document.querySelector("header");
@@ -96,19 +86,28 @@ window.addEventListener("scroll", () => {
 	}
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-	createHeader();
-	createNav();
-	createFooter();
-});
-
-/* scroll to top when reload | Code from stackoverflow.com
-|-- https://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top/11486546#11486546 -- 
-v                                            																		*/
-
+/* -- On Load Function --
+- Makes the page scroll to top on reload
+- Gets "starNum" from Local Storage
+- Updated HTML element "star" with starNum value from Local Storage
+*/
 window.onload = function () {
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
-};
+	const star = document.querySelector(".star");
+	const starNum = parseInt(localStorage.getItem("starNum"));
+	star.innerHTML = starNum;
+}; /* Code reference from stackoverflow.com  
+	https://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top/11486546#11486546 */
+
+/* ----------------------------------------------------- */
+
+/* 
+	document.addEventListener("DOMContentLoaded", () => {
+		createHeader();
+		createNav();
+		createFooter();
+	}); 
+	*/
 
 /* -- https://www.w3schools.com/howto/howto_js_media_queries.asp --
 
@@ -128,5 +127,15 @@ myFunction(x);
 
 // Attach listener function on state changes
 x.addEventListener("change", function() {
-  myFunction(x);
+  myFunction(x);s
 });*/
+
+/*
+
+-- Generate Random Number === $randomNum --
+
+-- get $userinput ->  if $userinput === $randomNum then say "Correct" else "Wrong" --
+
+-- if $userinput < $randomNum then say "Go higher!" else if $userinput > $randomNum say "Go lower!" --
+
+*/
