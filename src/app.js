@@ -2,6 +2,8 @@
 	- This is not currently active
 	- Will only be used during testing, final product will not use this
 	  unless I find a bug fix for the scroll error
+	- try making the html container of the code the height of the header, then it will know the hight before
+	content is loaded, and maybe it will not scroll
 */
 const createNavbar = () => {
 	let navbar = document.querySelector(".navbar");
@@ -10,7 +12,7 @@ const createNavbar = () => {
 			<li><img src="img/GameHub_Logo.png" class="logo grid_item" alt="logo" /></li>
 			<li class="search_bar grid_item"></li>
 			<li class="menu grid_item"></li>
-			<li class="star grid_item"></li>
+			<li class="star grid_item">0</li>
 			<li class="cart grid_item"><button class="reset">reset</button></li>
     `;
 };
@@ -49,10 +51,13 @@ reset_btn.addEventListener("click", resetStar);
 - Updates local value based on button clicks
 */
 const star_btn = document.querySelectorAll(".star_btn");
-
 star_btn.forEach((button) => {
 	button.addEventListener("click", (event) => {
-		const starNum = parseInt(localStorage.getItem("starNum"));
+		let starNum = parseInt(localStorage.getItem("starNum"));
+		// Initialize starNum if it's NaN -- from chatGPT
+		if (isNaN(starNum)) {
+			starNum = 0;
+		} //
 
 		const buttonClassTarget = event.target;
 		if (buttonClassTarget.classList.contains("add")) {
@@ -95,6 +100,9 @@ window.onload = function () {
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
 	const star = document.querySelector(".star");
 	const starNum = parseInt(localStorage.getItem("starNum"));
+	if (isNaN(starNum)) {
+		starNum = 0;
+	}
 	star.innerHTML = starNum;
 }; /* Code reference from stackoverflow.com  
 	https://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top/11486546#11486546 */
