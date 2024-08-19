@@ -5,37 +5,25 @@
 	- try making the html container of the code the height of the header, then it will know the hight before
 	content is loaded, and maybe it will not scroll
 */
-const createNavbar = () => {
-	let navbar = document.querySelector(".navbar");
 
-	navbar.innerHTML = `
-			<li><img src="img/GameHub_Logo.png" class="logo grid_item" alt="logo" /></li>
-			<li class="search_bar grid_item"></li>
-			<li class="menu grid_item"></li>
-			<li class="star grid_item">0</li>
-			<li class="cart grid_item"><button class="reset">reset</button></li>
-    `;
-};
-createNavbar();
+/* -- Sticky Header functionality -- 
+	- Activates on Scroll 
+*/
+window.addEventListener("scroll", () => {
+	let headerHight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
+	const headerSticky = document.querySelector("header");
 
-const createNav = () => {
-	let nav = document.querySelector("nav");
-
-	nav.innerHTML = `
-
-    `;
-};
-
-const createFooter = () => {
-	let footer = document.querySelector("footer");
-
-	footer.innerHTML = `
-        
-    `;
-};
+	if (window.scrollY > headerHight) {
+		headerSticky.classList.add("headerSticky");
+		headerSticky.style.transform = `translateY(-${headerHight}px)`;
+	} else {
+		headerSticky.classList.remove("headerSticky");
+		headerSticky.style.transform = "";
+	}
+});
 
 /* Local Storage Testing */
-const reset_btn = document.querySelector(".reset");
+/*const reset_btn = document.querySelector(".reset");
 const star = document.querySelector(".star");
 
 function resetStar() {
@@ -43,14 +31,14 @@ function resetStar() {
 	star.innerHTML = "0";
 }
 
-reset_btn.addEventListener("click", resetStar);
+reset_btn.addEventListener("click", resetStar);*/
 
 /* -- Star button functionality --
 - Selects all buttons with class ".star_btn"
 - Gets value of "starNum" from Local Storage
 - Updates local value based on button clicks
 */
-const star_btn = document.querySelectorAll(".star_btn");
+/*const star_btn = document.querySelectorAll(".star_btn");
 star_btn.forEach((button) => {
 	button.addEventListener("click", (event) => {
 		let starNum = parseInt(localStorage.getItem("starNum"));
@@ -74,29 +62,14 @@ star_btn.forEach((button) => {
 		}
 	});
 });
-
-/* -- Sticky Header functionality -- 
-	- Activates on Scroll 
 */
-window.addEventListener("scroll", () => {
-	let headerHight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
-	const headerSticky = document.querySelector("header");
-
-	if (window.scrollY > headerHight) {
-		headerSticky.classList.add("headerSticky");
-		headerSticky.style.transform = `translateY(-${headerHight}px)`;
-	} else {
-		headerSticky.classList.remove("headerSticky");
-		headerSticky.style.transform = "";
-	}
-});
 
 /* -- On Load Function --
 - Makes the page scroll to top on reload
 - Gets "starNum" from Local Storage
 - Updated HTML element "star" with starNum value from Local Storage
 */
-window.onload = function () {
+/*window.onload = function () {
 	document.body.scrollTop = document.documentElement.scrollTop = 0;
 	const star = document.querySelector(".star");
 	const starNum = parseInt(localStorage.getItem("starNum"));
@@ -104,7 +77,8 @@ window.onload = function () {
 		starNum = 0;
 	}
 	star.innerHTML = starNum;
-}; /* Code reference from stackoverflow.com  
+}; */
+/* Code reference from stackoverflow.com  
 	https://stackoverflow.com/questions/11486527/reload-browser-does-not-reset-page-to-top/11486546#11486546 */
 
 /* ----------------------------------------------------- */

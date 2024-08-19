@@ -1,0 +1,339 @@
+/* General Styles */
+
+/* Use import to split up your CSS into manageable chunks */
+/*@import url("./reset.css");*/
+/* Files that are only needed to be imported are called partials */
+/* These are marked with an underscore: */
+/*@import url("./variables.css");*/
+/* Feel free to add as many of these imports as you need */
+
+/*body {
+	color: var(--color-primary);
+	background-color: var(--color-secondary);
+}*/
+@import url("./basic.css");
+
+/* Header and Navigation */
+
+header {
+	width: 100%;
+	top: 0;
+	z-index: 100;
+	background-color: #cb3864;
+	height: 80px;
+}
+.logo {
+	float: left;
+	width: auto;
+}
+.navbar,
+.logo {
+	height: 80px;
+}
+.navbar {
+	justify-content: right;
+}
+.menu,
+.cart,
+.star {
+	margin-right: 40px;
+}
+@media only screen and (max-width: 481px) {
+	.star {
+		display: none;
+	}
+}
+phone nav {
+	height: 50px;
+}
+.nav .grid_item:hover {
+	background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
+}
+.headerSticky {
+	position: sticky;
+	opacity: 0.9;
+}
+.nav .grid_container {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	column-gap: 0;
+}
+.nav .grid_item {
+	height: 50px;
+	line-height: 50px;
+	background: rgba(40, 10, 28, 100%);
+	color: inherit;
+	border-radius: 0;
+}
+
+#newGames,
+#cyberpunk,
+#about,
+#contact {
+	scroll-margin-top: 70px;
+	scroll-behavior: smooth;
+}
+#top_games {
+	scroll-margin-top: 147px;
+	scroll-behavior: smooth;
+}
+@media only screen and (max-width: 769px) {
+	nav {
+		display: none;
+	}
+}
+/* Images - Top Games - Image Grid */
+
+.top_games {
+	margin-top: 20px;
+}
+.top_games .grid_container {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.top_games .grid_item {
+	border: 5px solid black;
+}
+@media only screen and (max-width: 769px) {
+	.top_games .grid_container {
+		grid-template-columns: 1fr;
+	}
+	.top_games .grid_item {
+		height: 200px;
+		margin-bottom: 20px;
+	}
+}
+/*
+@media only screen and (max-width: 320px) {}
+@media only screen and (min-width: 320px) {} phone
+@media only screen and (max-width: 481px) {} 
+@media only screen and (max-width: 769px) {} 
+@media only screen and (max-width: 1025px) {} PC
+@media only screen and (max-width: 1201px) {} TV
+*/
+/* Images - Game List - Image Grid */
+
+.new_games .grid_container {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	row-gap: 50px;
+}
+@media only screen and (max-width: 1025px) {
+	.new_games .grid_container {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		row-gap: 50px;
+	}
+}
+@media only screen and (max-width: 769px) {
+	.new_games .grid_container {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+/* Cyberpunk Card */
+
+.cyberpunk .grid_container {
+	grid-template-columns: 2fr 3fr;
+	align-items: stretch;
+}
+.cyberpunk .desc {
+	background-color: #ffacc4;
+	border: 10px solid #cb3864;
+	color: black;
+	padding: 20px;
+	width: auto;
+	border-radius: 30px 5px 0 5px;
+}
+.cyberpunk--main_img {
+	object-fit: cover;
+	width: 100%;
+}
+@media only screen and (max-width: 1025px) {
+	.cyberpunk .grid_container {
+		grid-template-columns: 1fr;
+	}
+	.cyberpunk .desc {
+		background-color: #ffacc4;
+		border: 10px solid #cb3864;
+		color: black;
+		padding: 20px;
+		width: auto;
+		border-radius: 30px 5px 0 5px;
+	}
+	.cyberpunk--main_img {
+		object-fit: cover;
+		object-fit: scale-down;
+		width: 100%;
+		height: 500px;
+		margin-bottom: 40px;
+	}
+}
+
+/* -- Contact -- */
+
+.contact .grid_container {
+	grid-template-rows: 2fr 3fr 2fr 3fr 2fr 3fr 2fr 10fr;
+}
+.contact_about--grid_container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+.contact,
+.about {
+	background-color: #cb3864;
+	padding: 20px;
+	width: auto;
+	border-radius: 30px;
+	border: black solid 3px;
+	margin: 40px 0;
+}
+.submit {
+	width: 120px;
+	height: 40px;
+	margin: 10px auto 0 auto;
+	border-radius: 10px;
+	border: none;
+	font-size: 20px;
+}
+@media only screen and (max-width: 1025px) {
+	.contact_about--grid_container {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* -- Product page -- */
+
+.product_page {
+	max-width: 1300px;
+	margin: auto;
+}
+.product_page h1 {
+	text-decoration: underline;
+	color: #ffdbe3;
+}
+
+.product_page span {
+	font-size: 50px;
+	font-weight: 500;
+	color: black;
+}
+.product_page .desc {
+	padding: 0 40px;
+}
+.product_page .desc p {
+	font-size: 13px;
+	background-color: #ffacc4;
+	color: #42092b;
+	font-weight: 500;
+	padding: 20px;
+	border: 1px solid black;
+}
+.product_page .buy_btn {
+	height: 50px;
+	width: 120px;
+	font-size: 20px;
+	font-weight: 800;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	background-color: #ffdbe3;
+}
+.product_page .price {
+	display: flex; /* Use flexbox for horizontal layout */
+	justify-content: left; /* Align items horizontally in center */
+}
+
+.product_page .grid_container {
+	background-color: #ff7ea5;
+	height: auto;
+	width: 100%;
+	margin: 50px 0;
+	grid-template-columns: 5fr 6fr;
+	column-gap: 0;
+}
+
+.product_page .grid_item:nth-child(1) {
+	margin: 20px;
+	background-color: #cb3864;
+	padding: 20px;
+}
+.product_page .grid_item:nth-child(2) {
+	border: 20px solid #cb3864;
+	margin: 20px 20px 20px 0;
+}
+
+.product_page .grid_item {
+	width: auto;
+}
+
+.product_page .main_img {
+	height: 100%;
+	width: 100%;
+	border: 5px solid black;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1025px) {
+	.product_page .grid_container {
+		grid-template-columns: 1fr;
+	}
+
+	.product_page .grid_item:nth-child(1) {
+		height: 400px;
+	}
+	.product_page .grid_item:nth-child(2) {
+		margin-left: 20px;
+	}
+}
+@media only screen and (max-width: 769px) {
+	.product_page {
+		margin: auto;
+	}
+
+	.product_page .grid_item:nth-child(1) {
+		margin: 10px;
+		padding: 10px;
+		border-radius: 0;
+		height: 250px;
+	}
+	.product_page .grid_item:nth-child(2) {
+		border-radius: 0;
+	}
+	.product_page h1 {
+		font-size: 70px;
+	}
+	.product_page span {
+		margin-left: 10px;
+	}
+}
+@media only screen and (max-width: 481px) {
+	.product_page .grid_item:nth-child(1) {
+		height: 200px;
+	}
+	.product_page h1 {
+		font-size: 40px;
+		font-weight: 300;
+	}
+	.product_page span {
+		margin: 0;
+		font-size: 30px;
+	}
+	.product_page .grid_item:nth-child(1) {
+		margin: 20px;
+		background-color: #cb3864;
+		padding: 20px;
+	}
+	.product_page .grid_item:nth-child(2) {
+		border: 10px solid #cb3864;
+	}
+}
+
+.card {
+	position: relative;
+}
+
+/* -- Checkout -- */
+
+.checkout h1 {
+	font-size: 35px;
+}
+.checkout h2 {
+	font-size: 30px;
+}
