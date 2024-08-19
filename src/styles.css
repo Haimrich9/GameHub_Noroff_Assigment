@@ -126,6 +126,20 @@ phone nav {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
+@media only screen and (max-width: 481px) {
+	.new_games .grid_container {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.new_games .grid_container {
+		grid-template-columns: 1fr;
+	}
+
+	.new_games .grid_item {
+		height: 200px;
+	}
+}
 
 /* Cyberpunk Card */
 
@@ -165,6 +179,34 @@ phone nav {
 		margin-bottom: 40px;
 	}
 }
+@media only screen and (max-width: 769px) {
+	.cyberpunk h2 {
+		font-size: 40px;
+	}
+}
+@media only screen and (max-width: 481px) {
+	.cyberpunk .desc {
+		padding: 20px;
+		border-radius: 0;
+	}
+	.cyberpunk p {
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.cyberpunk .desc {
+		padding: 10px;
+	}
+	.cyberpunk p {
+		font-size: 10px;
+	}
+	.cyberpunk h5 {
+		font-size: 25px;
+	}
+	.cyberpunk h6 {
+		font-size: 20px;
+	}
+}
 
 /* -- Contact -- */
 
@@ -195,6 +237,22 @@ phone nav {
 @media only screen and (max-width: 1025px) {
 	.contact_about--grid_container {
 		grid-template-columns: 1fr;
+	}
+}
+@media only screen and (max-width: 481px) {
+	.contact,
+	.about {
+		padding: 10px;
+		border-radius: 0;
+		border: black solid 1px;
+		margin: 20px 0;
+	}
+	.contact h3,
+	.about h3 {
+		font-size: 40px;
+	}
+	.about p {
+		font-size: 10px;
 	}
 }
 
@@ -297,31 +355,43 @@ phone nav {
 		border-radius: 0;
 	}
 	.product_page h1 {
-		font-size: 70px;
+		font-size: 60px;
 	}
 	.product_page span {
 		margin-left: 10px;
 	}
 }
 @media only screen and (max-width: 481px) {
-	.product_page .grid_item:nth-child(1) {
-		height: 200px;
-	}
 	.product_page h1 {
 		font-size: 40px;
 		font-weight: 300;
 	}
 	.product_page span {
-		margin: 0;
-		font-size: 30px;
+		margin: 5px 0;
+		font-size: 25px;
 	}
-	.product_page .grid_item:nth-child(1) {
-		margin: 20px;
-		background-color: #cb3864;
-		padding: 20px;
-	}
+
 	.product_page .grid_item:nth-child(2) {
 		border: 10px solid #cb3864;
+	}
+	.product_page .desc p {
+		font-size: 10px;
+		font-weight: 400;
+		padding: 10px;
+		border: 1px solid black;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.product_page h1 {
+		font-size: 30px;
+	}
+	.product_page span {
+		font-size: 20px;
+	}
+	.product_page .desc {
+		padding: 0 10px;
 	}
 }
 
