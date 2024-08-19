@@ -407,3 +407,168 @@ phone nav {
 .checkout h2 {
 	font-size: 30px;
 }
+
+/* Order summary */
+
+.summary,
+.adress,
+.pay,
+.total {
+	background-color: #ff7ea5;
+	border: 10px solid #cb3864;
+	color: black;
+}
+
+.item {
+	background-color: #ffb3c9;
+	padding: 10px;
+	margin: 20px 40px;
+}
+.item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.summary .grid_container {
+	grid-template-columns: 1fr 3fr;
+}
+.summary .grid_item {
+	border-radius: 0;
+}
+.summary h1 {
+	font-size: 70px;
+	margin: 10px;
+}
+
+.summary h3 {
+	font-size: 50px;
+	font-weight: 600;
+}
+.summary span {
+	font-size: 50px;
+}
+
+@media only screen and (max-width: 769px) {
+	.item {
+		padding: 10px;
+		margin: 10px 20px;
+	}
+	.summary .grid_container {
+		grid-template-columns: 1fr 2fr;
+	}
+	.summary h1 {
+		font-size: 50px;
+	}
+
+	.summary h3 {
+		font-size: 30px;
+		font-weight: 400;
+	}
+	.summary span {
+		font-size: 40px;
+	}
+}
+@media only screen and (max-width: 481px) {
+	.item {
+		padding: 10px;
+		margin: 10px 20px;
+	}
+	.summary .grid_container {
+		grid-template-columns: 1fr 2fr;
+	}
+
+	.summary h3 {
+		font-size: 20px;
+		font-weight: 400;
+	}
+	.summary span {
+		font-size: 15px;
+	}
+	.summary h1 {
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+}
+
+/* Delivery Adress */
+.adress h2,
+.pay h2 {
+	font-size: 70px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+.adress input {
+	height: 60px;
+	margin: 20px 40px;
+}
+
+.adress label,
+.pay label {
+	font-size: 40px;
+}
+
+.pay input {
+	height: 50px;
+}
+
+.total h2 {
+	padding: 10px;
+	border: 2px solid black;
+	width: 200px;
+	margin: 10px auto;
+	background-color: #ffb3c9;
+}
+
+@media only screen and (max-width: 481px) {
+	.adress h2,
+	.pay h2 {
+		font-size: 40px;
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+	.adress input {
+		height: 30px;
+	}
+
+	.adress label,
+	.pay label {
+		font-size: 25px;
+	}
+
+	.pay input {
+		height: 50px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.adress h2,
+	.pay h2 {
+		font-size: 20px;
+	}
+	.adress input {
+		height: 20px;
+	}
+
+	.adress label,
+	.pay label {
+		font-size: 20px;
+	}
+	.total h3 {
+		font-size: 30px;
+	}
+}
+@media only screen and (max-width: 769px) {
+	.success_page h1 {
+		font-size: 40px;
+	}
+	.success_page p {
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.success_page h1 {
+		font-size: 30px;
+	}
+	.success_page p {
+		font-size: 10px;
+	}
+}
