@@ -7,11 +7,16 @@
 /*@import url("./variables.css");*/
 /* Feel free to add as many of these imports as you need */
 
-/*body {
-	color: var(--color-primary);
-	background-color: var(--color-secondary);
-}*/
 @import url("./basic.css");
+
+/*
+@media only screen and (max-width: 320px) {}
+@media only screen and (min-width: 320px) {} phone
+@media only screen and (max-width: 481px) {} 
+@media only screen and (max-width: 769px) {} 
+@media only screen and (max-width: 1025px) {} PC
+@media only screen and (max-width: 1201px) {} TV
+*/
 
 /* Header and Navigation */
 
@@ -38,11 +43,6 @@ header {
 .star {
 	margin-right: 40px;
 }
-@media only screen and (max-width: 481px) {
-	.star {
-		display: none;
-	}
-}
 phone nav {
 	height: 50px;
 }
@@ -65,6 +65,18 @@ phone nav {
 	border-radius: 0;
 }
 
+@media only screen and (max-width: 769px) {
+	nav {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 481px) {
+	.star {
+		display: none;
+	}
+}
+/* Auto scroll for nav */
 #newGames,
 #cyberpunk,
 #about,
@@ -76,15 +88,11 @@ phone nav {
 	scroll-margin-top: 147px;
 	scroll-behavior: smooth;
 }
-@media only screen and (max-width: 769px) {
-	nav {
-		display: none;
-	}
-}
+
 /* Images - Top Games - Image Grid */
 
 .top_games {
-	margin-top: 20px;
+	margin-top: 100px;
 }
 .top_games .grid_container {
 	grid-template-columns: 1fr 1fr 1fr;
@@ -101,14 +109,7 @@ phone nav {
 		margin-bottom: 20px;
 	}
 }
-/*
-@media only screen and (max-width: 320px) {}
-@media only screen and (min-width: 320px) {} phone
-@media only screen and (max-width: 481px) {} 
-@media only screen and (max-width: 769px) {} 
-@media only screen and (max-width: 1025px) {} PC
-@media only screen and (max-width: 1201px) {} TV
-*/
+
 /* Images - Game List - Image Grid */
 
 .new_games .grid_container {
@@ -163,18 +164,8 @@ phone nav {
 	.cyberpunk .grid_container {
 		grid-template-columns: 1fr;
 	}
-	.cyberpunk .desc {
-		background-color: #ffacc4;
-		border: 10px solid #cb3864;
-		color: black;
-		padding: 20px;
-		width: auto;
-		border-radius: 30px 5px 0 5px;
-	}
 	.cyberpunk--main_img {
-		object-fit: cover;
 		object-fit: scale-down;
-		width: 100%;
 		height: 500px;
 		margin-bottom: 40px;
 	}
