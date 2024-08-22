@@ -41,7 +41,7 @@ header {
 .menu,
 .cart,
 .star {
-	margin-right: 40px;
+	margin-right: 20px;
 }
 phone nav {
 	height: 50px;
@@ -70,11 +70,31 @@ phone nav {
 		display: none;
 	}
 }
-
-@media only screen and (max-width: 481px) {
-	.star {
+.hide {
+	display: block;
+}
+@media only screen and (min-width: 482px) {
+	.menu {
 		display: none;
 	}
+}
+.hide {
+	display: block;
+}
+
+@media only screen and (max-width: 481px) {
+	.star,
+	.cart {
+		display: none;
+	}
+	.navbar,
+	.logo,
+	header {
+		height: 60px;
+	}
+}
+.hide {
+	display: block;
 }
 /* Auto scroll for nav */
 #newGames,

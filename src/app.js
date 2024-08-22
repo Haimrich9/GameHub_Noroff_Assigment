@@ -1,11 +1,3 @@
-/* Used to reduce copy pasting elements that will be on all html pages.
-	- This is not currently active
-	- Will only be used during testing, final product will not use this
-	  unless I find a bug fix for the scroll error
-	- try making the html container of the code the height of the header, then it will know the hight before
-	content is loaded, and maybe it will not scroll
-*/
-
 /* -- Sticky Header functionality -- 
 	- Activates on Scroll 
 */
@@ -21,6 +13,17 @@ window.addEventListener("scroll", () => {
 		headerSticky.style.transform = "";
 	}
 });
+
+/* -- Hamburger Menu functionality --
+- Toggles the class "hide" on the star and cart buttons */
+
+document.addEventListener("click", hideMenu);
+function hideMenu() {
+	let star = document.querySelector(".star");
+	let cart = document.querySelector(".cart");
+	star.classList.toggle("hide");
+	cart.classList.toggle("hide");
+}
 
 /* Local Storage Testing */
 /*const reset_btn = document.querySelector(".reset");
