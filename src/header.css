@@ -1,0 +1,74 @@
+header {
+	width: 100%;
+	top: 0;
+	z-index: 100;
+	background-color: #cb3864;
+	height: 80px;
+}
+.logo {
+	float: left;
+	width: auto;
+}
+.navbar,
+.logo {
+	height: 80px;
+}
+.navbar {
+	justify-content: right;
+}
+.menu,
+.cart,
+.star {
+	margin-right: 20px;
+}
+.nav .grid_item:hover {
+	background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
+}
+.headerSticky {
+	position: sticky;
+	opacity: 0.9;
+}
+.nav .grid_container {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	column-gap: 0;
+}
+.nav .grid_item {
+	height: 50px;
+	line-height: 50px;
+	background: rgba(40, 10, 28, 100%);
+	color: inherit;
+	border-radius: 0;
+}
+
+@media only screen and (max-width: 769px) {
+}
+@media only screen and (max-width: 481px) {
+	.star,
+	.cart {
+		display: none;
+	}
+	.navbar,
+	.logo,
+	header {
+		height: 60px;
+	}
+	.nav .grid_container {
+		grid-template-columns: 1fr;
+		column-gap: 0;
+	}
+}
+.hide {
+	display: block;
+}
+/* Auto scroll for nav */
+#newGames,
+#cyberpunk,
+#about,
+#contact {
+	scroll-margin-top: 70px;
+	scroll-behavior: smooth;
+}
+#top_games {
+	scroll-margin-top: 147px;
+	scroll-behavior: smooth;
+}

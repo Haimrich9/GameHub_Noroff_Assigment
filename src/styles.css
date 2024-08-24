@@ -8,6 +8,8 @@
 /* Feel free to add as many of these imports as you need */
 
 @import url("./basic.css");
+@import url("./typography.css");
+@import url("./header.css");
 
 /*
 @media only screen and (max-width: 320px) {}
@@ -19,95 +21,6 @@
 */
 
 /* Header and Navigation */
-
-header {
-	width: 100%;
-	top: 0;
-	z-index: 100;
-	background-color: #cb3864;
-	height: 80px;
-}
-.logo {
-	float: left;
-	width: auto;
-}
-.navbar,
-.logo {
-	height: 80px;
-}
-.navbar {
-	justify-content: right;
-}
-.menu,
-.cart,
-.star {
-	margin-right: 20px;
-}
-phone nav {
-	height: 50px;
-}
-.nav .grid_item:hover {
-	background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
-}
-.headerSticky {
-	position: sticky;
-	opacity: 0.9;
-}
-.nav .grid_container {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	column-gap: 0;
-}
-.nav .grid_item {
-	height: 50px;
-	line-height: 50px;
-	background: rgba(40, 10, 28, 100%);
-	color: inherit;
-	border-radius: 0;
-}
-
-@media only screen and (max-width: 769px) {
-	nav {
-		display: none;
-	}
-}
-.hide {
-	display: block;
-}
-@media only screen and (min-width: 482px) {
-	.menu {
-		display: none;
-	}
-}
-.hide {
-	display: block;
-}
-
-@media only screen and (max-width: 481px) {
-	.star,
-	.cart {
-		display: none;
-	}
-	.navbar,
-	.logo,
-	header {
-		height: 60px;
-	}
-}
-.hide {
-	display: block;
-}
-/* Auto scroll for nav */
-#newGames,
-#cyberpunk,
-#about,
-#contact {
-	scroll-margin-top: 70px;
-	scroll-behavior: smooth;
-}
-#top_games {
-	scroll-margin-top: 147px;
-	scroll-behavior: smooth;
-}
 
 /* Images - Top Games - Image Grid */
 
@@ -201,7 +114,7 @@ phone nav {
 		border-radius: 0;
 	}
 	.cyberpunk p {
-		font-size: 15px;
+		font-size: 16px;
 	}
 }
 @media only screen and (max-width: 400px) {
@@ -209,7 +122,8 @@ phone nav {
 		padding: 10px;
 	}
 	.cyberpunk p {
-		font-size: 10px;
+		text-align: left;
+		margin: 0;
 	}
 	.cyberpunk h5 {
 		font-size: 25px;
@@ -263,14 +177,15 @@ phone nav {
 		font-size: 40px;
 	}
 	.about p {
-		font-size: 10px;
+		font-size: 16px;
+		text-align: left;
 	}
 }
 
 /* -- Product page -- */
 
 .product_page {
-	max-width: 1300px;
+	max-width: 1130px;
 	margin: auto;
 }
 .product_page h1 {
@@ -287,7 +202,7 @@ phone nav {
 	padding: 0 40px;
 }
 .product_page .desc p {
-	font-size: 13px;
+	font-size: 16px;
 	background-color: #ffacc4;
 	color: #42092b;
 	font-weight: 500;
@@ -386,12 +301,12 @@ phone nav {
 		border: 10px solid #cb3864;
 	}
 	.product_page .desc p {
-		font-size: 10px;
 		font-weight: 400;
 		padding: 10px;
 		border: 1px solid black;
 		margin: 0;
 		margin-bottom: 10px;
+		text-align: left;
 	}
 }
 @media only screen and (max-width: 400px) {
@@ -493,7 +408,7 @@ phone nav {
 		font-weight: 400;
 	}
 	.summary span {
-		font-size: 15px;
+		font-size: 16px;
 	}
 	.summary h1 {
 		font-size: 30px;
@@ -572,14 +487,12 @@ phone nav {
 		font-size: 40px;
 	}
 	.success_page p {
-		font-size: 15px;
+		font-size: 16px;
+		text-align: left;
 	}
 }
 @media only screen and (max-width: 400px) {
 	.success_page h1 {
 		font-size: 30px;
-	}
-	.success_page p {
-		font-size: 10px;
 	}
 }
