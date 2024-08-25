@@ -14,37 +14,39 @@ header {
 }
 .navbar {
 	justify-content: right;
+	.menu {
+		display: none;
+	}
 }
 .menu,
 .cart,
 .star {
 	margin-right: 20px;
 }
-.nav .grid_item:hover {
-	background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
-}
-.headerSticky {
-	position: sticky;
-	opacity: 0.9;
-}
-.nav .grid_container {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	column-gap: 0;
-}
-.nav .grid_item {
-	height: 50px;
-	line-height: 50px;
-	background: rgba(40, 10, 28, 100%);
-	color: inherit;
-	border-radius: 0;
-}
 .nav {
 	.star,
 	.cart {
 		display: none;
 	}
+	.grid_item:hover {
+		background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
+	}
+	.grid_container {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		column-gap: 0;
+	}
+	.grid_item {
+		height: 50px;
+		line-height: 50px;
+		background: rgba(40, 10, 28, 100%);
+		color: inherit;
+		border-radius: 0;
+	}
 }
-
+.headerSticky {
+	position: sticky;
+	opacity: 0.9;
+}
 @media only screen and (max-width: 769px) {
 	.logo {
 		float: right;
@@ -56,6 +58,9 @@ header {
 		.star,
 		.cart {
 			display: none;
+		}
+		.menu {
+			display: block;
 		}
 	}
 	.nav {

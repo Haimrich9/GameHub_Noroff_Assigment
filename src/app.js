@@ -4,28 +4,27 @@
 
 window.addEventListener("resize", stickyHeader);
 window.addEventListener("scroll", stickyHeader);
+
 function stickyHeader() {
+	let headerHeight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
+	const headerSticky = document.querySelector("header");
+
 	if (window.innerWidth > 761) {
-		let headerHeight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
-		const headerSticky = document.querySelector("header");
-		if (window.innerWidth > 761) {
-			// If screen width is more than 761px
-			if (window.scrollY > headerHeight) {
-				headerSticky.classList.add("headerSticky");
-				headerSticky.style.transform = `translateY(-${headerHeight}px)`;
-			} else {
-				headerSticky.classList.remove("headerSticky");
-				headerSticky.style.transform = "";
-			}
+		// If screen width is more than 761px
+		if (window.scrollY > headerHeight) {
+			headerSticky.classList.add("headerSticky");
+			headerSticky.style.transform = `translateY(-${headerHeight}px)`;
 		} else {
-			// If screen width is 761px or less
-			if (window.scrollY > headerHeight) {
-				headerSticky.classList.add("headerSticky");
-				headerSticky.style.transform = ""; // No translation for smaller screens
-			} else {
-				headerSticky.classList.remove("headerSticky");
-				headerSticky.style.transform = "";
-			}
+			headerSticky.classList.remove("headerSticky");
+			headerSticky.style.transform = "";
+		}
+	} else {
+		// If screen width is 761px or less
+		headerSticky.style.transform = "";
+		if (window.scrollY > headerHeight) {
+			headerSticky.classList.add("headerSticky");
+		} else {
+			headerSticky.classList.remove("headerSticky");
 		}
 	}
 }
