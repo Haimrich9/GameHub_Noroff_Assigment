@@ -1,28 +1,43 @@
 /* -- Sticky Header functionality -- 
 	- Activates on Scroll 
 */
-window.addEventListener("scroll", () => {
-	let headerHight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
-	const headerSticky = document.querySelector("header");
 
-	if (window.scrollY > headerHight) {
-		headerSticky.classList.add("headerSticky");
-		headerSticky.style.transform = `translateY(-${headerHight}px)`;
-	} else {
-		headerSticky.classList.remove("headerSticky");
-		headerSticky.style.transform = "";
+window.addEventListener("resize", stickyHeader);
+window.addEventListener("scroll", stickyHeader);
+function stickyHeader() {
+	if (window.innerWidth > 761) {
+		let headerHeight = document.querySelector(".navbar").offsetHeight; /* Finds Height of .navbar */
+		const headerSticky = document.querySelector("header");
+		if (window.innerWidth > 761) {
+			// If screen width is more than 761px
+			if (window.scrollY > headerHeight) {
+				headerSticky.classList.add("headerSticky");
+				headerSticky.style.transform = `translateY(-${headerHeight}px)`;
+			} else {
+				headerSticky.classList.remove("headerSticky");
+				headerSticky.style.transform = "";
+			}
+		} else {
+			// If screen width is 761px or less
+			if (window.scrollY > headerHeight) {
+				headerSticky.classList.add("headerSticky");
+				headerSticky.style.transform = ""; // No translation for smaller screens
+			} else {
+				headerSticky.classList.remove("headerSticky");
+				headerSticky.style.transform = "";
+			}
+		}
 	}
-});
+}
+stickyHeader();
 
 /* -- Hamburger Menu functionality --
 - Toggles the class "hide" on the star and cart buttons */
-
-document.addEventListener("click", hideMenu);
+let menuBtn = document.querySelector(".menu");
+menuBtn.addEventListener("click", hideMenu);
 function hideMenu() {
-	let star = document.querySelector(".star");
-	let cart = document.querySelector(".cart");
-	star.classList.toggle("hide");
-	cart.classList.toggle("hide");
+	let nav = document.querySelector("nav");
+	nav.classList.toggle("hide");
 }
 
 /* Local Storage Testing */

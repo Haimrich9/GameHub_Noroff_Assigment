@@ -3,7 +3,6 @@ header {
 	top: 0;
 	z-index: 100;
 	background-color: #cb3864;
-	height: 80px;
 }
 .logo {
 	float: left;
@@ -39,26 +38,71 @@ header {
 	color: inherit;
 	border-radius: 0;
 }
-
-@media only screen and (max-width: 769px) {
-}
-@media only screen and (max-width: 481px) {
+.nav {
 	.star,
 	.cart {
 		display: none;
 	}
+}
+
+@media only screen and (max-width: 769px) {
+	.logo {
+		float: right;
+		margin-right: 20px;
+	}
+	.navbar {
+		justify-content: left;
+		margin-left: 20px;
+		.star,
+		.cart {
+			display: none;
+		}
+	}
+	.nav {
+		.star,
+		.cart {
+			display: block;
+		}
+		.grid_container {
+			justify-content: end;
+			border: 3px solid black;
+			border-top: none;
+			border-left: none;
+		}
+		.grid_item {
+			background: rgba(203, 56, 100, 1);
+		}
+		.grid_item:hover {
+			background: rgb(101, 21, 45);
+		}
+	}
+
+	header {
+		width: 100%;
+		top: 0;
+		z-index: 100;
+		background-color: #cb3864;
+		height: 80px;
+		position: sticky;
+	}
+	.headerSticky {
+		opacity: 1;
+	}
+	.nav .grid_container {
+		grid-template-columns: 1fr;
+		column-gap: 0;
+		width: 200px;
+	}
+	.hide {
+		display: none;
+	}
+}
+@media only screen and (max-width: 481px) {
 	.navbar,
 	.logo,
 	header {
 		height: 60px;
 	}
-	.nav .grid_container {
-		grid-template-columns: 1fr;
-		column-gap: 0;
-	}
-}
-.hide {
-	display: block;
 }
 /* Auto scroll for nav */
 #newGames,
