@@ -39,6 +39,11 @@ function hideMenu() {
 	nav.classList.toggle("hide");
 }
 
+/* ---------
+  The code below is experimental and commented out since it’s unfinished.
+  Keeping it for future use.
+  --------- */
+
 /* Local Storage Testing */
 /*const reset_btn = document.querySelector(".reset");
 const star = document.querySelector(".star");

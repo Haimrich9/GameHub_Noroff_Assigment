@@ -12,6 +12,9 @@ body {
 	font-family: roboto slab, "Times New Roman", Times, serif;
 	font-size: 25px;
 	text-align: center;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
 }
 main {
 	padding: 0 40px;
