@@ -29,6 +29,7 @@ header {
 		align-items: flex-start;
 		z-index: 101; /* Ensures the navbar is above the content */
 		position: relative; /* Required for z-index to work */
+		margin-bottom: 150px;
 	}
 	.navbar .menu {
 		display: block;
@@ -49,82 +50,3 @@ header {
 		position: relative; /* Required for z-index to work */
 	}
 }
-
-/*
-
-
-@media only screen and (max-width: 769px) {
-
-	.navbar {
-		justify-content: left;
-		margin-left: 20px;
-		.star,
-		.cart,
-		.home-btn {
-			display: none;
-		}
-		.menu {
-			display: block;
-		}
-	}
-	.nav {
-		.star,
-		.cart {
-			display: block;
-		}
-		.home-btn {
-			display: block;
-		}
-		.grid_container {
-			justify-content: end;
-			border: 3px solid black;
-			border-top: none;
-			border-left: none;
-		}
-		.grid_item {
-			background: rgba(203, 56, 100, 1);
-		}
-		.grid_item:hover {
-			background: rgb(101, 21, 45);
-		}
-	}
-
-	header {
-		width: 100%;
-		top: 0;
-		z-index: 100;
-		background-color: #cb3864;
-		height: 80px;
-		position: sticky;
-	}
-	.headerSticky {
-		opacity: 1;
-	}
-	.nav .grid_container {
-		grid-template-columns: 1fr;
-		column-gap: 0;
-		width: 200px;
-	}
-	.hide {
-		display: none;
-	}
-}
-@media only screen and (max-width: 481px) {
-	.navbar,
-	.logo,
-	header {
-		height: 60px;
-	}
-}
-/* Auto scroll for nav 
-#newGames,
-#cyberpunk,
-#about,
-#contact {
-	scroll-margin-top: 70px;
-	scroll-behavior: smooth;
-}
-#top_games {
-	scroll-margin-top: 147px;
-	scroll-behavior: smooth;
-}*/

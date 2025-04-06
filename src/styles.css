@@ -1,26 +1,8 @@
 /* General Styles */
 
-/* Use import to split up your CSS into manageable chunks */
-/*@import url("./reset.css");*/
-/* Files that are only needed to be imported are called partials */
-/* These are marked with an underscore: */
-/*@import url("./variables.css");*/
-/* Feel free to add as many of these imports as you need */
-
 @import url("./basic.css");
 @import url("./typography.css");
 @import url("./header.css");
-
-/*
-@media only screen and (max-width: 320px) {}
-@media only screen and (min-width: 320px) {} phone
-@media only screen and (max-width: 481px) {} 
-@media only screen and (max-width: 769px) {} 
-@media only screen and (max-width: 1025px) {} PC
-@media only screen and (max-width: 1201px) {} TV
-*/
-
-/* Header and Navigation */
 
 /* Images - Top Games - Image Grid */
 
