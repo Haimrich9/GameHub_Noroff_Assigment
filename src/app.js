@@ -11,12 +11,6 @@ const createFooter = () => {
 };
 createHeader();
 createFooter();
-let menuBtn = document.querySelector(".menu");
-menuBtn.addEventListener("click", hideMenu);
-function hideMenu() {
-	let nav = document.querySelector("nav");
-	nav.classList.toggle("hide");
-}
 
 /* ---------
   The code below is experimental and commented out since it’s unfinished.

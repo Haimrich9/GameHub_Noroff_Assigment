@@ -3,6 +3,16 @@ const total = document.querySelector(".total");
 const apiUrl = "https://v2.api.noroff.dev/gamehub";
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// Function to show a loading message
+function showLoading(container) {
+	container.innerHTML = "<p>Loading...</p>";
+}
+
+// Function to hide the loading message
+function hideLoading(container) {
+	container.innerHTML = "";
+}
+
 // Removed duplicate reference to the same DOM element
 
 // Add event listener to the button after rendering
@@ -22,6 +32,9 @@ function removeFromCart() {
 	}
 }
 async function fetchAndCreateCart() {
+	// Show loading message
+	const productContainer = document.querySelector(".checkout_loader");
+	showLoading(productContainer);
 	try {
 		if (cart.length === 0) {
 			checkout.innerHTML = "<p>Your cart is empty</p>";
@@ -33,6 +46,8 @@ async function fetchAndCreateCart() {
 		for (const item of cart) {
 			const response = await fetch(`${apiUrl}/${item.id}`);
 			const data = await response.json();
+			// Clear the loading message
+			hideLoading(productContainer);
 			checkout.innerHTML += `
 				<div class="item">
 					<img src="${data.data.image.url}" alt="${data.data.image.alt}" />

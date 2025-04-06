@@ -1,32 +1,47 @@
 let url = "https://v2.api.noroff.dev/gamehub";
 
-function loadGames(filterByGenre = "") {
+// Function to show a loading message
+function showLoading(container) {
+	container.innerHTML = "<p>Loading...</p>";
+}
+
+// Function to hide the loading message
+function hideLoading(container) {
+	container.innerHTML = "";
+}
+
+async function loadGames(filterByGenre = "") {
 	const productContainer = document.querySelector(".product_container");
 
-	fetch(url)
-		.then((response) => response.json())
-		.then((data) => {
-			// Clear the container before adding new content
-			productContainer.innerHTML = "";
+	// Show loading message
+	showLoading(productContainer);
 
-			// Filter games by genre if a filter is applied
-			const filteredGames = filterByGenre && filterByGenre !== "all" ? data.data.filter((game) => game.genre === filterByGenre) : data.data;
+	try {
+		const response = await fetch(url);
+		const data = await response.json();
 
-			// Loop through the filtered data and create a card for each game
-			filteredGames.forEach((game) => {
-				const cardHTML = `
-                    <div class="card">
-                        <a href="../product/?id=${game.id}">
-                        <img class="grid_item" src="${game.image.url}" alt="super duper game cover" />
-                        </a>
-                    </div>
-                `;
-				productContainer.innerHTML += cardHTML;
-			});
-		})
-		.catch((error) => {
-			console.error("Error fetching games:", error);
+		// Clear the loading message
+		hideLoading(productContainer);
+
+		// Filter games by genre if a filter is applied
+		const filteredGames = filterByGenre && filterByGenre !== "all" ? data.data.filter((game) => game.genre === filterByGenre) : data.data;
+
+		// Loop through the filtered data and create a card for each game
+		filteredGames.forEach((game) => {
+			const cardHTML = `
+				<div class="card">
+					<a href="../product/?id=${game.id}">
+					<img class="grid_item" src="${game.image.url}" alt="super duper game cover" />
+					</a>
+				</div>
+			`;
+			productContainer.innerHTML += cardHTML;
 		});
+	} catch (error) {
+		// Show error message if fetch fails
+		productContainer.innerHTML = "<p>Error loading games. Please try again later.</p>";
+		console.error("Error fetching games:", error);
+	}
 }
 
 // Event listener for the dropdown filter
@@ -47,11 +62,11 @@ const createProduct = () => {
 	let product_container = document.querySelector(".product_container");
 	let link = "";
 	product_container.innerHTML = `
-    	<div class="card">
-			<a href="product.html">
-			<img class="grid_item" src="${link}" alt="super duper game cover" />
-			</a>
-		</div>
+        <div class="card">
+            <a href="product.html">
+            <img class="grid_item" src="${link}" alt="super duper game cover" />
+            </a>
+        </div>
      `;
 };
 createProduct();

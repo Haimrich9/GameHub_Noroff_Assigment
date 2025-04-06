@@ -1,5 +1,15 @@
 const product_page = document.querySelector(".product_page");
 const apiUrl = "https://v2.api.noroff.dev/gamehub";
+
+// Function to show a loading message
+function showLoading(container) {
+	container.innerHTML = "<p>Loading...</p>";
+}
+
+// Function to hide the loading message
+function hideLoading(container) {
+	container.innerHTML = "";
+}
 function addToCart() {
 	// Check if the cart already exists in local storage
 	let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -32,15 +42,23 @@ function removeFromCart() {
 	}
 }
 async function fetchAndCreateProduct() {
+	// Show loading message
+	const productContainer = document.querySelector(".product_page");
+	showLoading(productContainer);
 	try {
+		// Clear the loading message
+
 		const params = new URLSearchParams(window.location.search);
 		const id = params.get("id");
 		if (!id) {
 			container.textContent = "No product found";
 			return;
 		}
+
 		const response = await fetch(`${apiUrl}/${id}`);
 		const data = await response.json();
+		// Clear the loading message
+		hideLoading(productContainer);
 		product_page.innerHTML = ""; // Clear the container before appending
 		product_page.innerHTML += `
 

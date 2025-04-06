@@ -16,20 +16,37 @@ header {
 		display: none;
 	}
 }
+.hide {
+	display: none;
+}
 @media only screen and (max-width: 900px) {
 	.logo {
 		float: right;
 		margin-right: 20px;
 	}
 	.navbar {
-		justify-content: left;
-		margin-left: 20px;
-		.btn {
-			display: none;
-		}
-		.menu {
-			display: block;
-		}
+		flex-direction: column-reverse;
+		align-items: flex-start;
+		z-index: 101; /* Ensures the navbar is above the content */
+		position: relative; /* Required for z-index to work */
+	}
+	.navbar .menu {
+		display: block;
+		align-self: flex-start;
+	}
+	.navbar .btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #141010;
+		color: #fff;
+		padding: 10px 15px;
+		width: 100px;
+		text-align: center;
+		border: none;
+		border-radius: 5px;
+		z-index: 100; /* Ensures the button is in front */
+		position: relative; /* Required for z-index to work */
 	}
 }
 
