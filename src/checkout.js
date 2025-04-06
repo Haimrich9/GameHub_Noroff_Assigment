@@ -48,13 +48,14 @@ async function fetchAndCreateCart() {
 		total.innerHTML = ` 				
 			<h3>Total: $${totalPrice.toFixed(2)}</h3>
 			<a href="/checkout/checkout_success">Pay Now</a>`;
-		addEventListener("click", (event) => {
-			if (event.target.classList.contains("removeCart_btn")) {
+		const removeButtons = document.querySelectorAll(".removeCart_btn");
+		removeButtons.forEach((button) => {
+			button.addEventListener("click", (event) => {
 				const itemId = event.target.getAttribute("data-id");
 				cart = cart.filter((cartItem) => cartItem.id !== itemId);
 				localStorage.setItem("cart", JSON.stringify(cart));
 				fetchAndCreateCart(); // Refresh the cart display
-			}
+			});
 		});
 	} catch (error) {
 		console.log("Error fetching cart items:", error);

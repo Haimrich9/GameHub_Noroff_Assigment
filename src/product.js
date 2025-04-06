@@ -54,7 +54,6 @@ async function fetchAndCreateProduct() {
 					<h1>${data.data.title}</h1>
 					<span class="price">$${data.data.price}</span>
 					<p>${data.data.description}</p>
-					<a href="../checkout/index.html?id=${data.data.id}"><button class="buy_btn">Buy Now!</button></a>
                     <button class="addCart_btn buy_btn">Add to cart</button>
                     <button class="removeCart_btn buy_btn">Remove</button>
 				</div>
