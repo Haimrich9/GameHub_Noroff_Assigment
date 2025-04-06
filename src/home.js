@@ -16,7 +16,7 @@ function loadGames(filterByGenre = "") {
 			filteredGames.forEach((game) => {
 				const cardHTML = `
                     <div class="card">
-                        <a href="product/product.html?id=${game.id}">
+                        <a href="../product/?id=${game.id}">
                         <img class="grid_item" src="${game.image.url}" alt="super duper game cover" />
                         </a>
                     </div>

@@ -3,27 +3,24 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="GameHub is your ultimate online store for digital games, offering a wide selection at competitive prices. Discover and purchase top games for less." />
-		<link rel="stylesheet" href="src/styles.css" />
-		<link rel="shortcut icon" href="img/GameHub_Logo.png" type="image/x-icon" />
+		<meta name="description" content="Thank you for your order! Your purchase is complete, and a confirmation email is on its way. Track your order and explore more from our store." />
+		<link rel="stylesheet" href="../../src/styles.css" />
+		<link rel="shortcut icon" href="../../img/GameHub_Logo.png" type="image/x-icon" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
-		<script src="src/app.js" defer></script>
-		<script src="src/home.js" defer></script>
-		<title>GameHub</title>
+		<script src="../../src/app.js" defer></script>
+		<title>Checkout Success | GameHub</title>
 	</head>
 	<body>
-		<header id="header">
-			<a href="/"><img src="/img/GameHub_Logo.png" class="logo grid_item" alt="logo" /></a>
+		<header>
+			<a href="/"><img src="../../img/GameHub_Logo.png" class="logo grid_item" alt="logo" /></a>
 			<ul class="navbar">
-				<li><a href="/" class="btn">Home</a></li>
-
-				<li><a href="/about" class="btn">About</a></li>
-				<li><a href="/contact" class="btn">Contact</a></li>
-
+				<li><a href="../#" class="btn">Home</a></li>
+				<li><a href="../../about/" class="btn">About</a></li>
+				<li><a href="../../contact/" class="btn">Contact</a></li>
 				<li class="cart btn">
-					<a href="/checkout"
+					<a href="../"
 						><svg width="50" height="45" viewBox="0 0 50 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M42.1047 26.9966C42.677 26.9967 43.2338 26.8374 43.6906 26.5426C44.1474 26.2479 44.4794 25.8339 44.6362 25.3633L49.8993 9.6153C50.0109 9.2805 50.03 8.92813 49.9553
 							8.58592C49.8805 8.24371 49.7139 7.921 49.4685 7.64319C49.2232 7.36537 48.9057 7.14003 48.5412 6.98489C48.1766 6.82976 47.775 6.74906 47.3677 6.74915H12.5525L10.9867 1.67604C10.8385
@@ -61,25 +58,15 @@
 				</li>
 			</ul>
 		</header>
-
 		<main>
-			<section class="new_games" id="newGames">
-				<h2>All Games</h2>
-				<hr />
-				<!-- Dropdown for filtering by genre -->
-				<div class="filter">
-					<label for="genreFilter">Filter by Genre:</label>
-					<select id="genreFilter">
-						<option value="">All</option>
-						<option value="Action">Action</option>
-						<option value="Adventure">Adventure</option>
-						<option value="Sports">Sports</option>
-						<option value="Horror">Horror</option>
-					</select>
-				</div>
-				<div class="grid_container product_container"></div>
+			<section class="success_page">
+				<h1>Thank you for your purhase!</h1>
+				<p>
+					Congratulations on your purchase! We're thrilled to confirm that your order has been successfully processed. Thank you for choosing GameHub If you have any questions or concerns regarding
+					your order, feel free to contact us at [Insert Contact Information]. Our team is here to assist you every step of the way. Thank you once again for your purchase. We truly appreciate your
+					support! Warm regards, [Your Company Name]
+				</p>
 			</section>
-			<!-- New Games img grid-->
 		</main>
 		<footer></footer>
 	</body>

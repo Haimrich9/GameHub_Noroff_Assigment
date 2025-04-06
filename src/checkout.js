@@ -47,7 +47,7 @@ async function fetchAndCreateCart() {
 		}
 		total.innerHTML = ` 				
 			<h3>Total: $${totalPrice.toFixed(2)}</h3>
-			<a href="/checkout/checkout_success/checkout_success.html2">Pay Now</a>`;
+			<a href="/checkout/checkout_success">Pay Now</a>`;
 		addEventListener("click", (event) => {
 			if (event.target.classList.contains("removeCart_btn")) {
 				const itemId = event.target.getAttribute("data-id");
