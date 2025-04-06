@@ -98,16 +98,17 @@
 		align-items: stretch;
 	}
 	.desc {
-		background-color: #ffacc4;
-		border: 10px solid #cb3864;
-		color: black;
+		border: 10px solid #c3195d;
+		color: #fff;
 		padding: 20px;
 		width: auto;
-		border-radius: 30px 5px 0 5px;
 	}
 	.cyberpunk--main_img {
 		object-fit: cover;
 		width: 100%;
+	}
+	p {
+		text-align: left;
 	}
 }
 
@@ -356,24 +357,18 @@
 
 /* -- Checkout -- */
 
-.checkout {
-	h1 {
-		font-size: 35px;
-	}
-	h2 {
-		font-size: 30px;
-	}
-}
-
 /* Order summary */
-
+.removeCart_btn {
+	width: 150px;
+	height: 50px;
+	font-size: 20px;
+}
 .summary,
-.adress,
-.pay,
 .total {
 	background-color: #ff7ea5;
 	border: 10px solid #cb3864;
 	color: black;
+	width: 1000px;
 }
 
 .item {
@@ -383,21 +378,10 @@
 }
 .item img {
 	width: 100%;
-	height: 100%;
+	height: 300px;
 	object-fit: cover;
 }
 .summary {
-	.grid_container {
-		grid-template-columns: 1fr 3fr;
-	}
-	.grid_item {
-		border-radius: 0;
-	}
-	h1 {
-		font-size: 70px;
-		margin: 10px;
-	}
-
 	h3 {
 		font-size: 50px;
 		font-weight: 600;
@@ -413,13 +397,6 @@
 		margin: 10px 20px;
 	}
 	.summary {
-		.grid_container {
-			grid-template-columns: 1fr 2fr;
-		}
-		h1 {
-			font-size: 50px;
-		}
-
 		h3 {
 			font-size: 30px;
 			font-weight: 400;
@@ -435,10 +412,6 @@
 		margin: 10px 20px;
 	}
 	.summary {
-		.grid_container {
-			grid-template-columns: 1fr 2fr;
-		}
-
 		h3 {
 			font-size: 20px;
 			font-weight: 400;
@@ -446,79 +419,11 @@
 		span {
 			font-size: 16px;
 		}
-		h1 {
-			font-size: 30px;
-			margin-bottom: 20px;
-		}
 	}
 }
 
 /* Delivery Adress */
-.adress h2,
-.pay h2 {
-	font-size: 70px;
-	margin-top: 20px;
-	margin-bottom: 40px;
-}
-.adress input {
-	height: 60px;
-	margin: 20px 40px;
-}
 
-.adress label,
-.pay label {
-	font-size: 40px;
-}
-
-.pay input {
-	height: 50px;
-}
-
-.total h2 {
-	padding: 10px;
-	border: 2px solid black;
-	width: 200px;
-	margin: 10px auto;
-	background-color: #ffb3c9;
-}
-
-@media only screen and (max-width: 481px) {
-	.adress h2,
-	.pay h2 {
-		font-size: 40px;
-		margin-top: 20px;
-		margin-bottom: 40px;
-	}
-	.adress input {
-		height: 30px;
-	}
-
-	.adress label,
-	.pay label {
-		font-size: 25px;
-	}
-
-	.pay input {
-		height: 50px;
-	}
-}
-@media only screen and (max-width: 400px) {
-	.adress h2,
-	.pay h2 {
-		font-size: 20px;
-	}
-	.adress input {
-		height: 20px;
-	}
-
-	.adress label,
-	.pay label {
-		font-size: 20px;
-	}
-	.total h3 {
-		font-size: 30px;
-	}
-}
 @media only screen and (max-width: 769px) {
 	.success_page h1 {
 		font-size: 40px;

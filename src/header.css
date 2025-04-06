@@ -1,16 +1,14 @@
 header {
 	width: 100%;
-	top: 0;
-	z-index: 100;
-	background-color: #cb3864;
-}
-.logo {
-	float: left;
-	width: auto;
+	border-bottom: 1px solid #c3195d;
 }
 .navbar,
 .logo {
 	height: 80px;
+}
+.logo {
+	float: left;
+	width: auto;
 }
 .navbar {
 	justify-content: right;
@@ -18,45 +16,28 @@ header {
 		display: none;
 	}
 }
-.menu,
-.cart,
-.star,
-.navbar .home-btn {
-	margin-right: 20px;
-}
-.nav {
-	.star,
-	.cart {
-		display: none;
-	}
-	.grid_item:hover {
-		background: linear-gradient(rgba(203, 56, 100, 1), rgba(203, 56, 100, 0.75));
-	}
-	.grid_container {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		column-gap: 0;
-	}
-	.grid_item {
-		height: 50px;
-		line-height: 50px;
-		background: rgba(40, 10, 28, 100%);
-		color: inherit;
-		border-radius: 0;
-	}
-}
-.headerSticky {
-	position: sticky;
-	opacity: 0.9;
-}
-.nav .home-btn {
-	color: #fff;
-	display: none;
-}
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 900px) {
 	.logo {
 		float: right;
 		margin-right: 20px;
 	}
+	.navbar {
+		justify-content: left;
+		margin-left: 20px;
+		.btn {
+			display: none;
+		}
+		.menu {
+			display: block;
+		}
+	}
+}
+
+/*
+
+
+@media only screen and (max-width: 769px) {
+
 	.navbar {
 		justify-content: left;
 		margin-left: 20px;
@@ -118,7 +99,7 @@ header {
 		height: 60px;
 	}
 }
-/* Auto scroll for nav */
+/* Auto scroll for nav 
 #newGames,
 #cyberpunk,
 #about,
@@ -129,4 +110,4 @@ header {
 #top_games {
 	scroll-margin-top: 147px;
 	scroll-behavior: smooth;
-}
+}*/
