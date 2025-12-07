@@ -128,24 +128,23 @@
 	margin: auto;
 	h1 {
 		text-decoration: underline;
-		color: #ffdbe3;
+		color: #fff;
 	}
 
 	span {
 		font-size: 50px;
 		font-weight: 500;
-		color: black;
+		color: #fff;
 	}
 	.desc {
 		padding: 0 40px;
 	}
 	.desc p {
 		font-size: 16px;
-		background-color: #ffacc4;
-		color: #42092b;
+		color: #fff;
 		font-weight: 500;
 		padding: 20px;
-		border: 1px solid black;
+		border: 1px solid #fff;
 	}
 	.buy_btn {
 		height: 50px;
@@ -154,7 +153,7 @@
 		font-weight: 800;
 		border-radius: 5px;
 		margin-bottom: 20px;
-		background-color: #ffdbe3;
+		background-color: #fff;
 	}
 	.price {
 		display: flex; /* Use flexbox for horizontal layout */
@@ -162,7 +161,6 @@
 	}
 
 	.grid_container {
-		background-color: #ff7ea5;
 		height: auto;
 		width: 100%;
 		margin: 50px 0;
@@ -172,11 +170,10 @@
 
 	.grid_item:nth-child(1) {
 		margin: 20px;
-		background-color: #cb3864;
+		background-color: none;
 		padding: 20px;
 	}
 	.grid_item:nth-child(2) {
-		border: 20px solid #cb3864;
 		margin: 20px 20px 20px 0;
 	}
 
@@ -187,7 +184,7 @@
 	.main_img {
 		height: 100%;
 		width: 100%;
-		border: 5px solid black;
+		border: 5px solid #fff;
 		box-sizing: border-box;
 		margin-bottom: 10px;
 	}
